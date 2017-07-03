@@ -49,27 +49,29 @@
 library(MASS)
 car = Cars93
 
-# a. Print the structure of the Cars93 data frame. 
-# What are the levels of car Type? of DriveTrain?
+# a. Print the structure of the Cars93 data frame. 27
+# What are the levels of car Type? of DriveTrain? 6;3
 
 # b. Use the table() function to: 
 # Make a contingency table of car Type. Now make a contingency table of DriveTrain.
 # Display your tables. What do they tell you? How does table() differ from levels()?
+#displays the amount per level
 
 # c. Make a contingency table that combines both car Type and DriveTrain. 
 # Display your table, and explain the result.
+#That most of them are front. table displays the amount of type of car for each drive train level
 
 # d. Find the RPM column in the cars data frame. Display it.
-# How many values are found in the RPM column?
+# How many values are found in the RPM column?102?
 
 # e. Now run the unique() function on the cars RPM column.
-# Display the result. How many values are in the result?
+# Display the result. How many values are in the result?25
 #
-# What can you infer unique() does? Run ?unique to find out more.
+# What can you infer unique() does? Run ?unique to find out more. displays all the levels of rpm
 
 
-# f. What happens if you try to run levels() on the RPM data? Why?
-# What happens if you run unique() on the car Type data?
+# f. What happens if you try to run levels() on the RPM data? Why? it displays null because there are no levels inside the vector
+# What happens if you run unique() on the car Type data?it displays the unique levels of type 
 
 
 # ------------------------------------------------------------------
@@ -79,9 +81,9 @@ car = Cars93
 miles =  c(65311, 65624, 65908, 66219, 66499, 66821, 67145, 67447)
 
 # a. Use the function diff() on the miles data and assign the result to a variable called x. 
-# What is the type of the result? What does it mean?
+# What is the type of the result? vector What does it mean? the set of diff(miles)
 
-# b. Use the function length() to find the lengths of the miles and x vectors. 
+# b. Use the function length() to find the lengths of the miles and x vectors. 8; 7
 
 # c. Use R functions to find the maximum and minimum number of miles between fill-ups, the 
 # average number of miles between fill-ups, the standard deviation, and a statistical summary.
@@ -115,11 +117,11 @@ boxplot(commute, ylab="Commute time/minutes", main="Corrected commute data")
 
 
 # e. How many times was your commute 20 minutes or more? To answer this you can try:
-#   sum( commute >= 20 )
-# How does this work?
+#   sum( commute >= 20 )4
+# How does this work?finds the amount of commutes that are 20 mins or more
 
 
-# f. What percent of your commutes are less than 17 minutes? How can you answer this with R?
+# f. What percent of your commutes are less than 17 minutes? How can you answer this with R?  30%
 
 # ----------------------------------------------------------
 
@@ -130,18 +132,18 @@ boxplot(commute, ylab="Commute time/minutes", main="Corrected commute data")
 # a. Enter this data into a variable called bill. 
 
 
-# b. Find the total amount, and the average amount, that you spent last year on cell phone bills. 
+# b. Find the total amount, and the average amount, that you spent last year on cell phone bills. 39.41667;473
 
 
-# c. What is the smallest amount you spent on your phone bill last year? What is the largest? Assuming 
-# the months are entered in order, which months were these? Hint: use the which() function to find the 
+# c. What is the smallest amount you spent on your phone bill last year?30 What is the largest? 49 Assuming 
+# the months are entered in order, which months were these? june and Sept Hint: use the which() function to find the 
 # months.
 
 
-# d. Run the following calculation, and explain its result:
+# d. Run the following calculation, and explain its result: it finds the range by subtracting the min from the max
 range(bill)[2] - range(bill)[1]
 
-# e. How many months was the amount greater than $40? What percentage was this?
+# e. How many months was the amount greater than $40? What percentage was this?5; 41.666667%
 
 # ----------------------------------------------------------
 
@@ -155,21 +157,21 @@ s = data.frame(Gender=survey$Sex,
 			          
 # which(), range(), and summary() will be useful for the following questions:			         
 			          
-# a. What is the age range for females? For males? Tip: use the which() function.
+# a. What is the age range for females? For males? Tip: use the which() function. between 16-50
 
 # b. How many subjects reported their height in Metric units, how many in Imperial units, 
-# and how many did not specify units?
+# and how many did not specify units?141;68;28
 # (This is a good application for the summary() function.)
 
 # c. Find the statistical range (max and min) of Metric heights in the dataset. 
-# Try using which() on the conditional.
+# Try using which() on the conditional. 153.5 200
 
-# d. What is the mean (average) age of right-handed people in the dataset?
+# d. What is the mean (average) age of right-handed people in the dataset? roughly 21 + or - 100 error
 
-# e. Find the gender of the youngest person in the dataset (use 2 lines of code)
+# e. Find the gender of the youngest person in the dataset (use 2 lines of code) Male
 
 # f. Find the handedness of the tallest person in the dataset that reported their 
-# height in Imperial units. Look out for NAs--use which().
+# height in Imperial units. Look out for NAs--use which().193.04 Left
 
 
 			          

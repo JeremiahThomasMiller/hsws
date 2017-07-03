@@ -16,15 +16,18 @@
 #
 # 1. Driving Test
 #
-# a. Examine the drivingTest() function below, and decide what it does.
+# a. Examine the drivingTest() function below, and decide what it does.decides if u can drive at ur age
 #
 # b. Next, call the function several times with different inputs. 
-# Does this confirm or change your explanation? What does paste()
-# do?
+# Does this confirm or change your explanation? it confirms it
+#What does paste()
+# do?paste prints out output from the function and can also print out some words
 #
 # c. Is it possible to call the function with an vector or other data
-# structure? With a non-numeric value? Why or why not? (Try it!)
-# What happens?
+# structure?yes but only if the vector contains numbers
+#With a non-numeric value?no because the function checks if age is a # w/ is.numeric(age)
+#Why or why not? (Try it!)
+# What happens? it says "Please call this function with a single numeric input."
 #
 # d. Create a vector of ages called ages, and call the drivingTest
 # function using the sapply() function. Example: ages = c(12, 16, 18)
@@ -33,7 +36,7 @@
 #     > sapply(ages, drivingTest)
 #
 # What happens? What do you notice about the output?
-
+#it displays what will happen at each age, the first is not old enough, the 2nd almost old enough, the 3rd old enough
 drivingTest = function(age) {
   
   if ( is.numeric(age) & ( length(age)==1 ) ) {
@@ -69,11 +72,11 @@ drivingTest(age);
 # 
 # Test the function with the following vector, and print the results.
 miles = c(50, 100, 200, 275)
+# 80 160 320 440
+# What is the type (class) of the output, given the input vector miles? numeric
 
-# What is the type (class) of the output, given the input vector miles?
-
-# What is the type (class) of the output if you supply a single numeric value?
-# What about a single character value?
+# What is the type (class) of the output if you supply a single numeric value? numeric
+# What about a single character value? an error
 
 # ------------------------------
 # 3. Average and Standard Deviation
@@ -82,6 +85,14 @@ miles = c(50, 100, 200, 275)
 # of an input set of numbers. Test the result on the body and brain columns of
 # the dataset mammals (mammals$body in units of kg, mammals$brain in units of g).
 #
+mean = function(number){
+  + num1 = mean(number);
+  + return(num1);
+  + }
+sd = function(number){
++ num2 = sd(number);
++ return(num2);
++ }
 # Hints: 
 #   - The native R function mean() can be used for the mean.
 #   - The standard deviation is calculated as the square root (sqrt()) of the variance (var())
@@ -108,15 +119,15 @@ US = car.test.frame[car.test.frame$Country=="USA", ]    # Only use American Cars
 US = droplevels(US[ ,c(1,4,6:8)])                       # Only use specified columns
 
 # b. Call head(), View(), or str() on the US dataset, to get a sense of the contents.
-# How many columns does it have? What are their types?
+# How many columns does it have? What are their types?5;Price, Mileage, weight,disp. hp
 
 # c. Now, call the sapply function on the US dataset, to apply the mean function to it.
 
 # Hint: Use the syntax sapply(US, mean). Do you agree that this is equivalent to running
 # mean(US$Price), followed by mean(US$Mileage), followed by the mean function of each other
-# column in the US data frame? Can you see the use of the apply() family?
+# column in the US data frame? Yes ;;;Can you see the use of the apply() family?yes i can
 
-# d. Call the sapply function on the US dataset and the range function.
+# d. Call the sapply function on the US dataset and the range function.> sapply(US, range)
 
 # ------------------------------
 
@@ -135,7 +146,7 @@ US = droplevels(US[ ,c(1,4,6:8)])                       # Only use specified col
 attach(iris)
 
 # Use the mean() function to find the overall mean of the iris Petal.Width column. 
-# Hint: use a call like: mean(iris[,"Petal.Width"])
+# Hint: use a call like: mean(iris[,"Petal.Width"])5.844444444444444444444
 
 # Then, use the by() function to find the mean of the Petal.Width column for each 
 # iris Species.  Hint: use a call like: by(iris[,"Petal.Width"], Species, mean)
